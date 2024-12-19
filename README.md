@@ -37,33 +37,33 @@ Use the `DeemaSdk.launch` method to initiate the payment flow:
 
 ```dart
 DeemaSdk.launch(
-context,
-"SDK_KEY",
-Environment.sandbox,
-PurchaseRequest(
-merchantOrderId: "1726",
-amount: 100.0,
-currencyCode: "KWD",
-),
-(result) {
-if (result is Success) {
-ScaffoldMessenger.of(context).showSnackBar(
-SnackBar(content: Text("Payment successful!")),
-);
-} else if (result is Failure) {
-ScaffoldMessenger.of(context).showSnackBar(
-SnackBar(content: Text("Payment failed: ${result.message}")),
-);
-} else if (result is Canceled) {
-ScaffoldMessenger.of(context).showSnackBar(
-SnackBar(content: Text("Payment was canceled")),
-);
-} else if (result is Unknown) {
-ScaffoldMessenger.of(context).showSnackBar(
-SnackBar(content: Text("Unknown payment result")),
-);
-}
-},
+  context,
+  "SDK_KEY",
+  Environment.sandbox,
+  PurchaseRequest(
+    merchantOrderId: "1726",
+    amount: 100.0,
+    currencyCode: "KWD",
+  ),
+  (result) {
+    if (result is Success) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Payment successful!")),
+      );
+    } else if (result is Failure) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Payment failed: ${result.message}")),
+      );
+    } else if (result is Canceled) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Payment was canceled")),
+      );
+    } else if (result is Unknown) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Unknown payment result")),
+      );
+    }
+  },
 );
 ```
 
