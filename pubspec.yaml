@@ -1,7 +1,7 @@
 name: deema_sdk
-description: "Deema BNPL SDK"
+description: Deema BNPL SDK
 version: 0.0.1
-homepage:
+homepage: 'https://github.com/ghazwan-safi/deema-flutter-sdk'
 
 environment:
   sdk: ^3.5.3
