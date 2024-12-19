@@ -10,9 +10,9 @@ import 'models/purchase_request.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({
-    super.key,
+    Key? key,
     required this.purchaseRequest,
-  });
+  }) : super(key: key);
 
   final PurchaseRequest purchaseRequest;
 

@@ -12,7 +12,11 @@ final settings = InAppWebViewSettings(
 );
 
 class DeemaWebView extends StatefulWidget {
-  const DeemaWebView({super.key, required this.webUrl, required this.onResult});
+  const DeemaWebView({
+    Key? key,
+    required this.webUrl,
+    required this.onResult,
+  }) : super(key: key);
 
   final String webUrl;
   final DeemaPurchaseCallBack onResult;

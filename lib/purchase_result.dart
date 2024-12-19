@@ -1,5 +1,5 @@
 
-sealed class PurchaseResult {}
+class PurchaseResult {}
 
 class Success extends PurchaseResult{}
 
