@@ -12,7 +12,7 @@ Add the **Deema SDK** to your Flutter project by including it in your `pubspec.y
 
 ```yaml
 dependencies:
-  deema_sdk: ^1.0.0
+  deema_sdk: sdk_version
 ```
 
 Run the following command to install the package:
