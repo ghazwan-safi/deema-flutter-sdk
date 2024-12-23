@@ -19,27 +19,28 @@ class PurchaseService {
   }
 
   Future<PurchaseResponse> createPurchase(PurchaseRequest request) async {
-    late final String url;
+    late final String baseUrl;
     switch (_env) {
 
       case Environment.sandbox:
-        url = 'https://staging-api.deema.me/api/merchant/v1/purchase';
+        baseUrl = 'https://sandbox-api.deema.me';
         break;
       case Environment.production:
-        // TODO: Handle production url case.
-        url = 'https://api.deema.me/api/merchant/v1/purchase';
+        baseUrl = 'https://api.deema.me';
         break;
     }
+
+    final requestUrl = '$baseUrl/api/merchant/v1/purchase';
 
     try {
       final response = await http
           .post(
-        Uri.parse(url),
+        Uri.parse(requestUrl),
         headers: _headers,
         body: jsonEncode(request.toJson()),
       );
 
-      debugPrint('Request: POST $url');
+      debugPrint('Request: POST $requestUrl');
       debugPrint('Request Headers: $_headers');
       debugPrint('Request Body: ${jsonEncode(request.toJson())}');
 
